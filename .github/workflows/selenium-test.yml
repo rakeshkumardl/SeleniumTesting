@@ -42,9 +42,3 @@ jobs:
     - name: Run Selenium Test
       run: mvn test
       working-directory: Hello
-
-    - name: Archive Test Results
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-results
-        path: Hello/target/surefire-reports/  # Adjust the path as necessary
