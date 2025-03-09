@@ -5,7 +5,7 @@ public class LaunchUrl {
 
     public static void main(String[] args) {
         // Set the path to the chromedriver executable
-        System.setProperty("webdriver.chrome.driver", "D:\\chromeDriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
         // Initialize the ChromeDriver
         WebDriver driver = new ChromeDriver();
