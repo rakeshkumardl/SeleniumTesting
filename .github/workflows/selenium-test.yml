@@ -14,7 +14,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: 'adopt'  # Add this line
+        distribution: 'adopt'
 
     - name: Download ChromeDriver
       run: |
@@ -26,7 +26,13 @@ jobs:
         sudo chown root:root /usr/local/bin/chromedriver
         sudo chmod 0755 /usr/local/bin/chromedriver
 
+    - name: Download Selenium JAR
+      run: |
+        wget -N https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+        mkdir -p libs
+        mv selenium-server-standalone-3.141.59.jar libs/
+
     - name: Run Selenium test
       run: |
-        javac Hello/src/test/java/LaunchUrl.java
-        java -cp .:selenium-server-standalone-3.141.59.jar Hello/src/test/java/LaunchUrl
+        javac -cp libs/selenium-server-standalone-3.141.59.jar Hello/src/test/java/LaunchUrl.java
+        java -cp .:libs/selenium-server-standalone-3.141.59.jar Hello/src/test/java/LaunchUrl
