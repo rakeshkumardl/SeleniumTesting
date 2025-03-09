@@ -34,5 +34,5 @@ jobs:
 
     - name: Run Selenium test
       run: |
-        javac -cp libs/selenium-server-standalone-3.141.59.jar Hello/src/test/java/LaunchUrl.java
+        javac -cp .:libs/selenium-server-standalone-3.141.59.jar Hello/src/test/java/LaunchUrl.java
         java -cp .:libs/selenium-server-standalone-3.141.59.jar Hello/src/test/java/LaunchUrl
