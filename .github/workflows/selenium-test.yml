@@ -36,4 +36,4 @@ jobs:
         sudo chmod +x /usr/local/bin/chromedriver
 
     - name: Run Selenium Test
-      run: ./gradlew test # or `mvn test` if using Maven
+      run: mvn test
